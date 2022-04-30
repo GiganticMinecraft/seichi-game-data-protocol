@@ -4,16 +4,21 @@ on: pull_request
 
 jobs:
   lint-protos:
-    name: Lint protobuf definitions
+    name: Lint protobuf definitions and push to Buf Schema Registry
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: bufbuild/buf-setup-action@v1
 
-      # Lint your Protobuf sources
+      # Lint Protobuf sources
       - uses: bufbuild/buf-lint-action@v1
 
       # Check breaking changes
       - uses: bufbuild/buf-breaking-action@v1
         with:
           against: "https://github.com/GiganticMinecraft/SeichiGameAPI-protocol.git#branch=main"
+
+      # Push to BSR on merge
+      - uses: bufbuild/bufbuild/buf-push-action@v1
+        with:
+          buf_token: ${{ secrets.BUF_TOKEN }}
