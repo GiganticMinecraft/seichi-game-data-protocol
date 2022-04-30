@@ -1,8 +1,10 @@
 syntax = "proto3";
 
+package gigantic_minecraft.game_data.v1;
+
 import "google/protobuf/empty.proto";
 
-service SeichiGameDataReadService {
+service ReadService {
   /* 記録にあるだけのプレーヤーの最終退出時刻を取得する */
   rpc LastQuits (Empty) returns (LastQuitsReply);
 
