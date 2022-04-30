@@ -19,6 +19,6 @@ jobs:
           against: "https://github.com/GiganticMinecraft/SeichiGameAPI-protocol.git#branch=main"
 
       # Push to BSR on merge
-      - uses: bufbuild/bufbuild/buf-push-action@v1
+      - uses: bufbuild/buf-push-action@v1
         with:
           buf_token: ${{ secrets.BUF_TOKEN }}
