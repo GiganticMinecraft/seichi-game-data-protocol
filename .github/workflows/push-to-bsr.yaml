@@ -1,6 +1,9 @@
-name: Lint
+name: Push to BSR
 
-on: pull_request
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   lint-protos:
@@ -12,11 +15,6 @@ jobs:
 
       # Lint Protobuf sources
       - uses: bufbuild/buf-lint-action@v1
-
-      # Check breaking changes
-      - uses: bufbuild/buf-breaking-action@v1
-        with:
-          against: "https://github.com/GiganticMinecraft/SeichiGameAPI-protocol.git#branch=master"
 
       # Push to BSR on merge
       - uses: bufbuild/buf-push-action@v1
