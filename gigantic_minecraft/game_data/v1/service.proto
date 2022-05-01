@@ -6,19 +6,19 @@ import "google/protobuf/empty.proto";
 
 service ReadService {
   /* 記録にあるだけのプレーヤーの最終退出時刻を取得する */
-  rpc LastQuits (google.protobuf.Empty) returns (LastQuitsResponse);
+  rpc LastQuits(google.protobuf.Empty) returns (LastQuitsResponse);
 
   /* 記録にあるだけのプレーヤーのブロック破壊量を取得する */
-  rpc BreakCounts (google.protobuf.Empty) returns (BreakCountsResponse);
+  rpc BreakCounts(google.protobuf.Empty) returns (BreakCountsResponse);
 
   /* 記録にあるだけのプレーヤーの建築量を取得する */
-  rpc BuildCounts (google.protobuf.Empty) returns (BuildCountsResponse);
+  rpc BuildCounts(google.protobuf.Empty) returns (BuildCountsResponse);
 
   /* 記録にあるだけのプレーヤーのプレイティック数を取得する */
-  rpc PlayTicks (google.protobuf.Empty) returns (PlayTicksResponse);
+  rpc PlayTicks(google.protobuf.Empty) returns (PlayTicksResponse);
 
   /* 記録にあるだけのプレーヤーの投票数を取得する */
-  rpc VoteCounts (google.protobuf.Empty) returns (VoteCountsResponse);
+  rpc VoteCounts(google.protobuf.Empty) returns (VoteCountsResponse);
 }
 
 message Player {
