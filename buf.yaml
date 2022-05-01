@@ -2,10 +2,6 @@ version: v1
 
 name: "buf.build/gigantic-minecraft/game-data"
 
-# 注意: SeichiGameAPI-protocol はWebpackやCargo(tonic-build/prost)からの利用を想定しており、
-# これらのビルドシステムはbuf.yaml内の依存を
-# 推移的に解決するような仕組みを(2022/04/30時点では)備えていないはずなので、
-# これらビルドシステム側がBufに対応するまではdepsに依存関係を追加するのは避けてください。
 deps: []
 
 lint:
