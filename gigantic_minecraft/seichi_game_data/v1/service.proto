@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package gigantic_minecraft.game_data.v2;
+package gigantic_minecraft.seichi_game_data.v1;
 
 import "google/protobuf/empty.proto";
 
