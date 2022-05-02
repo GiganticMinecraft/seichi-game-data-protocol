@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package gigantic_minecraft.game_data.v2;
+
+import "google/protobuf/empty.proto";
+
+service ReadService {
+  /* 記録にあるだけのプレーヤーの最終退出時刻を取得する */
+  rpc LastQuits(google.protobuf.Empty) returns (LastQuitsResponse);
+
+  /* 記録にあるだけのプレーヤーのブロック破壊量を取得する */
+  rpc BreakCounts(google.protobuf.Empty) returns (BreakCountsResponse);
+
+  /* 記録にあるだけのプレーヤーの建築量を取得する */
+  rpc BuildCounts(google.protobuf.Empty) returns (BuildCountsResponse);
+
+  /* 記録にあるだけのプレーヤーのプレイティック数を取得する */
+  rpc PlayTicks(google.protobuf.Empty) returns (PlayTicksResponse);
+
+  /* 記録にあるだけのプレーヤーの投票数を取得する */
+  rpc VoteCounts(google.protobuf.Empty) returns (VoteCountsResponse);
+}
+
+message Player {
+  string uuid = 1;
+  string last_known_name = 2;
+}
+
+message PlayerLastQuit {
+  Player player = 1;
+  string rfc_3339_date_time = 2;
+}
+
+message PlayerBreakCount {
+  Player player = 1;
+  uint64 break_count = 2;
+}
+
+message PlayerBuildCount {
+  Player player = 1;
+  uint64 build_count = 2;
+}
+
+message PlayerPlayTicks {
+  Player player = 1;
+  uint64 play_ticks = 2;
+}
+
+message PlayerVoteCount {
+  Player player = 1;
+  uint64 vote_count = 2;
+}
+
+message LastQuitsResponse {
+  repeated PlayerLastQuit results = 1;
+}
+
+message BreakCountsResponse {
+  repeated PlayerBreakCount results = 1;
+}
+
+message BuildCountsResponse {
+  repeated PlayerBuildCount results = 1;
+}
+
+message PlayTicksResponse {
+  repeated PlayerPlayTicks results = 1;
+}
+
+message VoteCountsResponse {
+  repeated PlayerVoteCount results = 1;
+}
