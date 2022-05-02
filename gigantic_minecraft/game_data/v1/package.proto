@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+// # `game_data` API v1
+// ## **DEPRECATED**
+//
+// このプロトコルは今後更新されません。
+//
+// seichi-game-apiは
+// [v2](https://buf.build/gigantic-minecraft/game-data/docs/main:gigantic_minecraft.game_data.v2)
+// へと移行するため、このプロトコルを利用していた各システムは
+// [v2](https://buf.build/gigantic-minecraft/game-data/docs/main:gigantic_minecraft.game_data.v2)
+// への移行を進めてください。
+
+package gigantic_minecraft.game_data.v1;
