@@ -3,7 +3,7 @@ name: Lint
 on:
   pull_request:
     paths:
-      - gigantic_minecraft
+      - "gigantic_minecraft/**"
 
 jobs:
   lint-protos:
