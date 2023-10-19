@@ -10,7 +10,7 @@ jobs:
     name: Lint protobuf definitions and push to Buf Schema Registry
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: bufbuild/buf-setup-action@v1
 
       # Lint Protobuf sources
