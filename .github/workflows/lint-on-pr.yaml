@@ -8,7 +8,7 @@ on:
 jobs:
   lint-protos:
     name: Lint protobuf definitions and push to Buf Schema Registry
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v6
       - uses: bufbuild/buf-setup-action@v1
